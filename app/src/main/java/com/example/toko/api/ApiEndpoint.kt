@@ -87,10 +87,6 @@ interface ApiEndpoint {
         @Field("id_produk") id_produk : Int,
         @Field("admin_id") admin_id : Int,
         @Field("namasupplier") namasupplier : String
-//        @Header("Authorization") token: String,
-//        @Field("admin_id") admin_id: Int,
-//        @Field("namasupplier") namasupplier:String,
-//        @Field("total") total: String
     ) : Call<PembelianResponsePost>
 
     @FormUrlEncoded
@@ -102,10 +98,5 @@ interface ApiEndpoint {
         @Field("produk_id") produk_id: Int,
         @Field("qty") qty: Int
     ) : Call<ItemPembelianResponsePost>
-
-//    @GET("item_pembelian")
-//    fun  getPembelian(
-//        @Header("Authorization") token: String
-//    ) : Call <ItemPembelianResponse>
 
 }

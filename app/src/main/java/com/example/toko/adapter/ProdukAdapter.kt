@@ -30,7 +30,7 @@ class ProdukAdapter(private val listProduk: List<Produk>):RecyclerView.Adapter<P
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val produk = listProduk[position]
         holder.txtNamaProduk.text = produk.nama
-        holder.txtHarga.text = produk.harga
+        holder.txtHarga.text = "Rp "+produk.harga
         holder.txtStok.text = "Sisa Stok : "+produk.stok
 
 
@@ -48,6 +48,7 @@ class ProdukAdapter(private val listProduk: List<Produk>):RecyclerView.Adapter<P
                     response: Response<ProdukResponsePost>
                 ) {
                     Log.d("Sucess", response.toString())
+
                     Toast.makeText(
                         holder.itemView?.context,
                         "Data Berhasil diHapus",
@@ -58,7 +59,11 @@ class ProdukAdapter(private val listProduk: List<Produk>):RecyclerView.Adapter<P
                 }
 
                 override fun onFailure(call: Call<ProdukResponsePost>, t: Throwable) {
-                    Log.e(" Error", t.toString())
+                    Toast.makeText(
+                        holder.itemView?.context,
+                        "Data Tidak Dapat dihapus \n karena masih digunakan",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
 
             })

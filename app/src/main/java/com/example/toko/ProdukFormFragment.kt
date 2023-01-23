@@ -67,7 +67,7 @@ private val api by lazy { BaseRetrofit().endpoint }
                         response: Response<ProdukResponsePost>
                     ) {
                         Log.d("Sucess",response.toString())
-                        Toast.makeText(activity?.applicationContext, "Data Berhasil diInput", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(activity?.applicationContext, "Data" + txtFormNama.text.toString()+ "Berhasil di Edit", Toast.LENGTH_SHORT).show()
 
                         findNavController().navigate(R.id.produkFragment)
                     }
@@ -97,24 +97,7 @@ private val api by lazy { BaseRetrofit().endpoint }
 
                 })
             }
-//            api.postProduk(token.toString(),adminId.toString().toInt(),txtFormNama.text.toString()
-//            ,txtFormHarga.text.toString().toInt(),txtFormStok.text.toString().toInt()).enqueue(object :
-//                Callback<ProdukResponsePost> {
-//                override fun onResponse(
-//                    call: Call<ProdukResponsePost>,
-//                    response: Response<ProdukResponsePost>
-//                ) {
-//                   Log.d("Sucess",response.toString())
-//                    Toast.makeText(activity?.applicationContext, "Data Berhasil diInput", Toast.LENGTH_SHORT).show()
-//
-//                    findNavController().navigate(R.id.produkFragment)
-//                }
-//
-//                override fun onFailure(call: Call<ProdukResponsePost>, t: Throwable) {
-//                    Log.e(" Error",t.toString())
-//                }
-//
-//            })
+
         }
     return view
     }
