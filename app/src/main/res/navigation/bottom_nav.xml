@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nav"
+    app:startDestination="@id/produkFragment">
+
+    <fragment
+        android:id="@+id/produkFragment"
+        android:name="com.example.toko.ProdukFragment"
+        android:label="fragment_produk"
+        tools:layout="@layout/fragment_produk" />
+    <fragment
+        android:id="@+id/laporanFragment"
+        android:name="com.example.toko.LaporanFragment"
+        android:label="fragment_laporan"
+        tools:layout="@layout/fragment_laporan" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.toko.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/transaksiFragment"
+        android:name="com.example.toko.TransaksiFragment"
+        android:label="fragment_transaksi"
+        tools:layout="@layout/fragment_transaksi" />
+    <fragment
+        android:id="@+id/produkFormFragment"
+        android:name="com.example.toko.ProdukFormFragment"
+        android:label="fragment_produk_form"
+        tools:layout="@layout/fragment_produk_form" >
+        <argument
+            android:name="argusProduk"
+            app:argType="com.example.toko.response.produk.Produk"
+            app:nullable="true" />
+        <argument
+            android:name="argsStatus"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/bayarFragment"
+        android:name="com.example.toko.BayarFragment"
+        android:label="fragment_bayar"
+        tools:layout="@layout/fragment_bayar" >
+        <argument android:name="argsCart"
+            app:argType="com.example.toko.response.cart.Cart" />
+        <argument
+            android:name="argsTotal"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/pembelianFragment"
+        android:name="com.example.toko.PembelianFragment"
+        android:label="fragment_pembelian"
+        tools:layout="@layout/fragment_pembelian" />
+    <fragment
+        android:id="@+id/beliFormFragment"
+        android:name="com.example.toko.BeliFormFragment"
+        android:label="fragment_beli_form"
+        tools:layout="@layout/fragment_beli_form" >
+        <argument
+            android:name="argsBeli"
+            app:argType="com.example.toko.response.cart.Beli" />
+        <argument
+            android:name="argsQty"
+            app:argType="string" />
+        <argument
+            android:name="argsNama"
+            app:argType="string" />
+        <argument
+            android:name="argsId"
+            app:argType="string" />
+    </fragment>
+</navigation>
